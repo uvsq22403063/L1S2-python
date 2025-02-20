@@ -4,45 +4,35 @@ window = tk.Tk()
 window.title("carre qui bouge")
 
 
-def left():
-
+def left(a):
     canva.move(carre, -20, 0)
 
 
-def right():
-
+def right(b):
     canva.move(carre, 20, 0)
 
 
-def up():
-
+def up(c):
     canva.move(carre, 0, -20)
 
 
-def down():
-
+def down(d):
     canva.move(carre, 0, 20)
 
 
-taille_canva = 720
+x = 960
+y = 540
 
 
-canva = tk.Canvas(window, width=taille_canva, height=taille_canva, bg="red")
+canva = tk.Canvas(window, width=x*2, height=y*2, bg="red")
 canva.pack(fill="both", expand='true')
-carre = canva.create_rectangle(taille_canva/2, taille_canva/2,
-                               taille_canva/2+20, taille_canva/2+20,
-                               fill="blue", width=2)
-
-gauche = tk.Button(window, text="va à gauche", command=left)
-
-window.bind("<Button-1>", left)
-window.bind("<Button-1>", right)
-window.bind("<Button-1>", up)
-window.bind("<Button-1>", down)
+carre = canva.create_rectangle(x, y, x+20, y+20, fill="blue", width=2)
 
 
-# label1 = tk.Label(window,fg="black", text="Z= up, Q= left, S= down, D= right"
-# , font=("helvetica", "12"))
+window.bind("<KeyPress-q>", left)
+window.bind("<KeyPress-d>", right)
+window.bind("<KeyPress-z>", up)
+window.bind("<KeyPress-s>", down)
 
 canva.grid()
 window.tk.mainloop()
