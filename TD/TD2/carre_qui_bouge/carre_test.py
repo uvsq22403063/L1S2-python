@@ -3,7 +3,8 @@ import tkinter as tk
 window = tk.Tk()
 window.title("carre qui bouge")
 imag = tk.PhotoImage(file="C:\\app\\python\\L1S2-python\\L1S2-python\\TD\\TD2\\carre_qui_bouge\\isha.png")
-ptitimage = imag.subsample(2, 2)
+coffre = tk.PhotoImage(file="C:\\app\\python\\L1S2-python\\L1S2-python\\TD\\TD2\\carre_qui_bouge\\coffre.png")
+ptitimage = coffre.subsample(2, 2)
 
 
 def left(a):
@@ -30,6 +31,7 @@ canva = tk.Canvas(window, width=x*2, height=y*2)
 canva.pack(fill="both", expand='true')
 canva.create_image(700, 400, image=ptitimage)
 carre = canva.create_rectangle(x, y, x+20, y+20, fill="blue", width=2)
+# coffr = canva.create_image()
 
 window.bind("<KeyPress-q>", left)
 window.bind("<KeyPress-d>", right)
