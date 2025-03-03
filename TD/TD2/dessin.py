@@ -40,7 +40,7 @@ window.title("p'tit dessin")
 canva = tk.Canvas(window, width=wd, height=he, bg="black")
 
 b1 = tk.Button(window, text="choix couleur",
-                            padx=20, pady=1, command=colo, bg="lightgray")
+                            padx=20, pady=1, command=colo, bg="#14a675")
 b2 = tk.Button(window, text="cercle", padx=20, pady=1,
                             command=cercle, bg="lightgray")
 b3 = tk.Button(window, text="carré", padx=20, pady=1,
