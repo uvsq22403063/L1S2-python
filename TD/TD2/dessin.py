@@ -3,7 +3,7 @@ import random as rd
 
 wd = 720
 he = 420
-color = "blue"
+color = "red"
 
 
 def cercle():
@@ -29,15 +29,15 @@ def croix():
 
 def colo():
     global color
-    colour = tk.Entry(window)
-    colour.grid(row=0, column=1)
-    color = colour.get()
+    color = entree.get()
 
 
 window = tk.Tk()
 window.config(bg="cyan")
 window.title("p'tit dessin")
 canva = tk.Canvas(window, width=wd, height=he, bg="black")
+entree = tk.Entry(window)
+entree.grid(row=0, column=1)
 
 b1 = tk.Button(window, text="choix couleur",
                             padx=20, pady=1, command=colo, bg="#14a675")
