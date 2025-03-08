@@ -32,7 +32,6 @@ def d2d():
 
     for i in range(larg):
 
-        re += 1
         bl = 0
 
         for j in range(haut):
@@ -40,6 +39,7 @@ def d2d():
             draw_pix(i, j, get_color(re, 0, bl))
 
             bl += 1
+        re += 1
 
 
 def draw_pix(t, p, color):
