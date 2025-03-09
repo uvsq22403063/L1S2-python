@@ -8,6 +8,8 @@ coord = []
 
 def carre(event):
 
+    global formes, coord
+
     if event.x <= 250:
         color = "blue"
     else:
@@ -19,6 +21,23 @@ def carre(event):
     formes.append(carre)
     coord.append(canva.coords(carre))
     print(coord)
+
+    if len(coord) == 2:
+        if (coord[0][0] <= 250 and coord[1][0] <= 250):
+            canva.create_line(coord[-1][0], coord[-1][1], coord[-2][0],
+                              coord[-2][1], fill="blue")
+            coord = []
+            formes = []
+        elif (coord[0][0] > 250 and coord[1][0] > 250):
+            canva.create_line(coord[-1][0], coord[-1][1], coord[-2][0],
+                              coord[-2][1], fill="blue")
+            coord = []
+            formes = []
+        else:
+            canva.create_line(coord[-1][0], coord[-1][1], coord[-2][0],
+                              coord[-2][1], fill="red")
+            coord = []
+            formes = []
 
 
 window = tk.Tk()
